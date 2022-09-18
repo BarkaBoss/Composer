@@ -10,6 +10,11 @@ import androidx.compose.foundation.shape.CornerSize
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.PlayCircle
+import androidx.compose.material.icons.filled.SkipNext
+import androidx.compose.material.icons.filled.SkipPrevious
+import androidx.compose.material.icons.outlined.RepeatOne
+import androidx.compose.material.icons.outlined.Shuffle
 import androidx.compose.material.icons.rounded.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -72,7 +77,10 @@ fun HomeHeader(){
         Spacer(Modifier.height(10.dp))
 
         SongArtistTitle()
-        //Spacer(Modifier.height(10.dp))
+
+        Spacer(Modifier.height(10.dp))
+
+        Controls()
     }
 
 
@@ -122,6 +130,36 @@ fun SongArtistTitle(){
                 fontSize = 14.sp
             )
         )
+    }
+}
+
+@Preview
+@Composable
+fun Controls(){
+    Row(modifier = Modifier
+        .fillMaxWidth()
+        .padding(10.dp),
+        horizontalArrangement = Arrangement.SpaceBetween,
+        verticalAlignment = Alignment.CenterVertically
+        ) {
+        Icon(imageVector = Icons.Outlined.RepeatOne,
+            contentDescription = "",
+            tint = Color.DarkGray)
+        Icon(imageVector = Icons.Filled.SkipPrevious,
+            contentDescription = "",
+            tint = Color.DarkGray)
+        Icon(imageVector = Icons.Filled.PlayCircle,
+            contentDescription = "",
+            tint = Color.DarkGray,
+            modifier = Modifier.size(50.dp)
+            )
+        Icon(imageVector = Icons.Filled.SkipNext,
+            contentDescription = "",
+            tint = Color.DarkGray)
+        Icon(imageVector = Icons.Outlined.Shuffle,
+            contentDescription = "",
+            tint = Color.DarkGray)
+
     }
 }
 
