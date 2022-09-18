@@ -28,10 +28,14 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import ng.com.nokt.composer.ui.theme.ComposerTheme
 
 class MainActivity : ComponentActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
+
+
+
+        override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContent {
@@ -50,6 +54,9 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun HomeHeader(){
+
+    val systemUI = rememberSystemUiController()
+    systemUI.isStatusBarVisible = false
     Column(
         modifier = Modifier
             .fillMaxWidth()
